@@ -1,0 +1,76 @@
+
+ var mongoose = require("mongoose");
+ var Campground = require("./models/campground");
+  var Comment = require("./models/comment");
+
+
+   var data = [
+         {
+         name:"Cloud Rest",
+         image:"data:image/jpeg;base64,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",
+         description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+        },
+         {
+         name:"Cousy Hest",
+         image:"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRLXADbUp3Qqj3-6g3H9amK0p1mZHnlk7NfYA&usqp=CAU",
+         description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+        },
+         {
+         name:"Cloud Heaven",
+         image:"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSjWaptzeyiCKHQO1Ee9lnuHu7mCrsnp86w0w&usqp=CAU",
+         description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+        }       
+
+   ]
+
+
+
+
+
+
+
+
+
+  function seedDB(){
+       // Remove all campgrounds
+       Campground.remove({},function(err){
+       	  if(err){
+       	  	console.log(err);
+       	  }
+       	  
+       	  	console.log("Removed campground!!");
+       	  	  // Add a few campgrounds
+        data.forEach(function(seed){
+        	Campground.create(seed,function(err,campground){
+        		if(err){
+        			console.log(err);
+        		}
+        		else{
+        			console.log("added a campground");
+        			//Create Comment
+        			Comment.create(
+        				{text:"This place is great!!",
+        				  author : "Homwer"                         
+        			     }, function(err,comment){
+                             if(err){
+                             	console.log(err);
+                             }
+                             else{
+                             	campground.comments.push(comment);
+                             	campground.save();
+                             	console.log("added a new comment");
+                             }
+
+
+        			     });
+        		}
+        	});
+        });
+       	
+       });
+     
+   
+     // Add a few comments
+  }
+     
+     module.exports = seedDB; 
