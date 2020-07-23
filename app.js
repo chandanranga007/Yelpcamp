@@ -18,10 +18,18 @@
 
 
 
-     mongoose.connect("mongodb://localhost:27017/yelp_camp",{
-     	useNewUrlParser:true,
-     	useUnifiedTopology:true
+     // mongoose.connect("mongo "mongodb+srv:yelpcamp.2k3gb.mongodb.net/<YelpCamp>" --username chandanranga007",{
+     // 	useNewUrlParser:true,
+     // 	useUnifiedTopology:true
+     // }); 
+
+     // Try kr connect krne ka
+
+     mongoose.connect("mongodb+srv://chandanranga007:Pirates@1999@yelpcamp.2k3gb.mongodb.net/YelpCamp?retryWrites=true&w=majority",{
+      useNewUrlParser:true,
+      useUnifiedTopology:true
      }); 
+     //
     app.use(bodyparser.urlencoded({extended: true}));
     app.set("view engine","ejs");
     app.use(express.static(__dirname + "/public"));
