@@ -4,7 +4,7 @@
 
 ## Live Demo
 
-To see the app in action, go to [https://yelpcamp--demo.herokuapp.com/](https://cryptic-sands-12094.herokuapp.com/)
+To see the app in action, go to [https://cryptic-sands-12094.herokuapp.com/](https://cryptic-sands-12094.herokuapp.com/)
 
 ## Features
 
@@ -12,15 +12,12 @@ To see the app in action, go to [https://yelpcamp--demo.herokuapp.com/](https://
   
   * User login with username and password
 
-  * Admin sign-up with admin code
 
 * Authorization:
 
   * One cannot manage posts and view user profile without being authenticated
 
   * One cannot edit or delete posts and comments created by other users
-
-  * Admin can manage all posts and comments
 
 * Manage campground posts with basic functionalities:
 
@@ -45,17 +42,11 @@ To see the app in action, go to [https://yelpcamp--demo.herokuapp.com/](https://
 npm install
 ```
 
-or
-
-```sh
-yarn install
-```
 
 ### Comments in code
 
 Some comments in the source code are course notes and therefore might not seem necessary from a developer's point of view.
 
-## Built with
 
 ### Front-end
 
